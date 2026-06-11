@@ -19,6 +19,7 @@ class PyUxarray(PythonPackage):
 
     maintainers("Chrismarsh")
 
+    version("2026.4.1", sha256="7934f85430b791186a684022d0e736e26275ac38f597c38b7000c8bea889ab0e")
     version("2026.2.0", sha256="296adbcdcee0eba4dea4af31e4f9b489bb7092983f0fcb14e3f45f73089446a4")
     version("2025.12.0", sha256="0be5ad31f916253d6a3167dd42b0f6ccea754443aace90ddf0e36cc16407a6d5")
     version("2025.11.0", sha256="a1976851451d3729f86e9fe9a8a899c4bf338b84af8dc265298f5a16a6400bb9")
@@ -72,8 +73,13 @@ class PyUxarray(PythonPackage):
     depends_on("py-shapely", type=("build", "run"))
     depends_on("py-spatialpandas", type=("build", "run"))
     depends_on("py-geopandas", type=("build", "run"))
+
     depends_on("py-xarray", type=("build", "run"))
+    # https://github.com/UXARRAY/uxarray/issues/1490
+    depends_on("py-xarray@2024.7.1:2026.3.0", type=("build", "run"), when="@:2026.2.0")
+
     depends_on("py-hvplot", type=("build", "run"))
     depends_on("py-healpix", type=("build", "run"), when="@2025.4.0:")
     depends_on("py-polars", type=("build", "run"), when="@2025.4.0:")
+    depends_on("py-pyproj", type=("build", "run"), when="@2026.4.0:")
     depends_on("py-pytest", type=("build", "run"))
