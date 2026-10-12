@@ -25,6 +25,7 @@ class Vtk(CMakePackage):
 
     license("BSD-3-Clause")
 
+    version("9.7.1", sha256="cae04fd355004cb916a409db79d53a208f1221e975aeacc7540ee67b148ee91a")
     version("9.6.2", sha256="aed12cec12a9609179bf66329070266627ca64244a10856a452b2a17ffb04a1d")
     version("9.6.0", sha256="d77d180694faafdc816578b9a53651f6790e799615811bfbb91018661a3bb8f2")
     version("9.5.1", sha256="14443661c7b095d05b4e376fb3f40613f173e34fc9d4658234e9ec1d624a618f")
